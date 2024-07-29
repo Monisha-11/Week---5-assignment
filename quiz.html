@@ -1,0 +1,62 @@
+<div id="title">
+    <h1>Interactive Quiz</h1>
+</div>
+
+<div id="qns">
+    <div id="qn1">
+        <p>1. What is the capital of France?</p>
+        <input type="radio" name="quiz1" value="paris">Paris<br>
+        <input type="radio" name="quiz1" value="London">London<br>
+        <input type="radio" name="quiz1" value="Berlin">Berlin<br>
+    </div>
+    
+    <div id="qn2">
+        <p>2. Which Planet is Known as the Red Planet?</p>
+        <input type="radio" name="quiz2" value="Mars">Mars<br>
+        <input type="radio" name="quiz2" value="Venus">Venus<br>
+        <input type="radio" name="quiz2" value="Jupiter">Jupiter<br>
+    </div>
+    
+    <div id="qn3">
+        <p>3. What is the largest mammal on Earth?</p>
+        <input type="radio" name="quiz3" value="Elephant">Elephant<br>
+        <input type="radio" name="quiz3" value="Blue_whale">Blue Whale<br>
+        <input type="radio" name="quiz3" value="Giraffe">Giraffe<br>
+    </div>
+</div>
+
+<button style="background-color: rgb(12, 208, 12); color: rgb(0, 0, 0); padding: 8px; margin-top: 10px;" id="submit">Submit</button>
+
+<h1 id="score"></h1>
+
+<script>
+    var qn1 = document.getElementsByName("quiz1");
+    var qn2 = document.getElementsByName("quiz2");
+    var qn3 = document.getElementsByName("quiz3");
+
+    var submit = document.getElementById("submit");
+    var Score = document.getElementById("score");
+
+    var score = 0;
+
+    // Function to check answers
+    function checkAnswer(qn, correctAnswer) {
+        for (var i = 0; i < qn.length; i++) {
+            qn[i].addEventListener("click", function(event) {
+                if (event.target.value === correctAnswer) {
+                    score += 1;
+                }
+                console.log(score);
+            });
+        }
+    }
+
+    // Attach event listeners
+    checkAnswer(qn1, "paris");
+    checkAnswer(qn2, "Mars");
+    checkAnswer(qn3, "Blue_whale");
+
+    submit.addEventListener("click", function() {
+        Score.textContent = "Your Score is: " + score;
+    });
+</script>

@@ -1,0 +1,24 @@
+<div id="container">
+    <p style="margin-left: 50px;" id="given">EqFtlZ</p>
+    <input type="text" placeholder="type here" id="box">
+    <button id="verify">Verify</button>
+</div>
+
+<script>
+    var given = document.getElementById("given").textContent;
+    var box = document.getElementById("box");
+    var verify = document.getElementById("verify");
+
+    // Function to verify the answer
+    function verifyAnswer() {
+        var answer = box.value;
+        if (answer === given) {
+            alert("superba");
+        } else {
+            alert("mokka");
+        }
+    }
+
+    // Attach the event listener to the button
+    verify.addEventListener("click", verifyAnswer);
+</script>

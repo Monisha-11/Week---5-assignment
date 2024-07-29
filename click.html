@@ -1,0 +1,98 @@
+<div class="container">
+    <img src="./images/1.html" alt="img1" id="image1">
+    <img src="./images/2.html" alt="img1" id="image2">
+    <img src="./images/3.html" alt="img1" id="image3">
+</div>
+
+<div id="overlay">
+    <p id="ex1">X</p>
+</div>
+
+<div>
+    <img src="./images/1.html" alt="1" id="i1" >
+    <img src="./images/2.html" alt="1" id="i2" >
+    <img src="./images/3.html" alt="1" id="i3" >
+</div>
+
+
+
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    #overlay{
+        background-color: black;
+        opacity: 0.5;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+    #ex1{
+        margin-left:98%;
+        margin-top: 10px;
+        color: white;
+        cursor: pointer;
+    }
+    #i1{
+        display: none;
+        margin-left: 40%;
+        margin-top: 10%;
+        position: absolute;
+        z-index: 1; 
+    }
+    #i2{
+        display: none;
+        margin-left: 40%;
+        margin-top: 10%;
+        position: absolute;
+        z-index: 1; 
+    }
+    #i3{
+        display: none;
+        margin-left: 40%;
+        margin-top: 10%;
+        position: absolute;
+        z-index: 1; 
+    }
+</style>
+
+<script>
+    var over = document.getElementById("overlay")
+    var ex1 = document.getElementById("ex1")
+
+
+    var image1 = document.getElementById("image1")
+    var i1 = document.getElementById("i1")
+
+    var image2 = document.getElementById("image2")
+    var i2 = document.getElementById("i2")
+
+    var image3 = document.getElementById("image3")
+    var i3 = document.getElementById("i3")
+
+    image1.addEventListener("click",function(){
+        over.style.display="block"
+        i1.style.display="block"
+    })
+
+    image2.addEventListener("click",function(){
+        over.style.display="block"
+        i2.style.display="block"
+    })
+
+    image3.addEventListener("click",function(){
+        over.style.display="block"
+        i3.style.display="block"
+    })
+
+    ex1.addEventListener("click",function(){
+        over.style.display="none"
+        i1.style.display="none"
+        i2.style.display="none"
+        i3.style.display="none"
+
+    })
+</script>
